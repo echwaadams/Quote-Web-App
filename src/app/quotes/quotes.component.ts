@@ -21,6 +21,15 @@ export class QuotesComponent implements OnInit {
       return<any>new Date(b.datePosted) - <any>new Date(a.datePosted)
     })
   }
+
+  quoteDelete(isRead: any, index: number){
+    if(isRead){
+      let toDelete = confirm("Are you sure you want to delete this Quote?")
+      if(toDelete){
+        this.quotes.splice(index,1)
+      }
+    }
+  }
   displayInfo(index:number){
     this.quotes[index].showInfo= !this.quotes[index].showInfo
   }
