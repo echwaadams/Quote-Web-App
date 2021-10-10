@@ -16,6 +16,14 @@ export class QuotesComponent implements OnInit {
     new Quote (5,'Gibson','Goals','Goal setting is the secret to a compelling future.','Tonny Robins', new Date(2011,3,1),0,0),
     new Quote (5,'Ivan','Life','If you are working on something that you really care about, you don’t have to be pushed. The vision pulls you.','Steve Jobs', new Date(1991,8,17),0,0)
   ];
+  get sortQuotes(){
+    return this.quotes.sort((a,b) =>{
+      return<any>new Date(b.datePosted) - <any>new Date(a.datePosted)
+    })
+  }
+  displayInfo(index:number){
+    this.quotes[index].showInfo= !this.quotes[index].showInfo
+  }
 
   constructor() { }
 
