@@ -3,6 +3,9 @@
         {{title | titlecase}}
     </h1>
     <div class="container-fluid">
+        <div class="row">
+            <!-- <app-quotes-form (add)="addedQuote($event)"></app-quotes-form> -->
+        </div>
         <div class="col-sm-9">
             <div class="all-sect">
                 <div *ngFor='let quote of sortQuotes let i = index' style="width: 24rem;">
